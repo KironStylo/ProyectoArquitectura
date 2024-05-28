@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<!-- Agregado el espacio de nombres f -->
+
+<h:head>
+	<title>Inicio - Productos</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet" />
+	<style>
+.action-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.data-column {
+	background-color: #f9f9f9;
+}
+</style>
+</h:head>
+<h:body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Mi Tienda</a>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<!-- Otras opciones del navbar -->
+				</ul>
+				<h:form>
+					<h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}"
+						class="btn btn-danger" style="margin-right: 10px;" />
+				</h:form>
+			</div>
+		</div>
+	</nav>
+	<div class="container mt-4">
+		<h1>Listado de Productos</h1>
+		<h:form>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">Mi Tienda</a>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<!-- Otros elementos de la barra de navegación aquí -->
+						</ul>
+						<p:commandButton value="Crear Producto"
+							action="#{productosBean.irACrearProducto}"
+							styleClass="btn btn-primary" />
+					</div>
+				</div>
+			</nav>
+			<p:dataTable var="producto" value="#{productosBean.products}"
+				emptyMessage="No hay productos disponibles" scrollable="true"
+				scrollHeight="400">
+				<p:column headerText="Nombre" styleClass="data-column">
+					<h:outputText value="#{producto.nombre}" />
+				</p:column>
+				<p:column headerText="Precio" style="width: 100px;"
+					styleClass="data-column">
+					<h:outputText value="#{producto.precio}" />
+				</p:column>
+				<p:column headerText="Cantidad" styleClass="data-column"
+					style="width: 100px;">
+					<h:outputText value="#{producto.cantidad}" />
+				</p:column>
+				<!-- Nueva columna para mostrar el estado activo/inactivo -->
+				<p:column headerText="Estado" styleClass="data-column"
+					style="width: 100px;">
+					<h:outputText value="#{producto.activo ? 'Activo' : 'Inactivo'}"
+						styleClass="#{producto.activo ? 'text-success' : 'text-danger'}" />
+				</p:column>
+
+				<p:column headerText="Acciones" styleClass="data-column">
+					<div class="action-buttons">
+						<p:commandButton value="Editar"
+							action="#{productosBean.editarProducto(producto)}"
+							styleClass="btn btn-primary" />
+
+						<p:commandButton value="Ver"
+							action="#{productosBean.verProducto(producto)}"
+							styleClass="btn btn-success" />
+						<p:commandButton
+							value="#{producto.activo ? 'Desactivar' : 'Activar'}"
+							styleClass="btn #{producto.activo ? 'btn-danger' : 'btn-success'}"
+							actionListener="#{productosBean.cambiarEstadoProducto(producto)}"
+							update="@form" ajax="true" />
+					</div>
+				</p:column>
+			</p:dataTable>
+
+
+		</h:form>
+	</div>
+</h:body>
+</html>

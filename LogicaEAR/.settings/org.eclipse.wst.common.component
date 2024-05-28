@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="LogicaEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="LogicaTier.jar" deploy-path="/" handle="module:/resource/LogicaTier/LogicaTier">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LogicaTierInterfaces.jar" deploy-path="/" handle="module:/resource/LogicaTierInterfaces/LogicaTierInterfaces">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="DatosTierInterfaces.jar" deploy-path="/lib" handle="module:/resource/DatosTierInterfaces/DatosTierInterfaces">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Entities.jar" deploy-path="/lib" handle="module:/resource/Entities/Entities">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jboss-client.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/ProjectServers/wildfly-31.0.1.Datos/bin/client/jboss-client.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

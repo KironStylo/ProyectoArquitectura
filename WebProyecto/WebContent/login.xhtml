@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .radio-group label {
+            margin: 0 10px;
+        }
+    </style>
+</h:head>
+<h:body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-sm-6">
+                <h2 class="text-center mb-4">Iniciar Sesión</h2>
+                <h:form>
+                    <p:messages id="messages" showDetail="true" />
+                    <div class="form-group">
+                        <label for="username">Nombre de Usuario:</label>
+                        <p:inputText id="username" value="#{loginBean.username}" class="form-control" required="true" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <p:password id="password" value="#{loginBean.password}" class="form-control" required="true" />
+                    </div>
+                    <div class="form-group text-center">
+                        <label for="userType">Tipo de Usuario:</label>
+                        <div class="radio-group">
+                            <p:selectOneRadio id="userType" value="#{loginBean.selectedRole}" layout="grid" columns="2">
+                                <f:selectItem itemValue="Usuario" itemLabel="Usuario" />
+                                <f:selectItem itemValue="Administrador" itemLabel="Administrador" />
+                            </p:selectOneRadio>
+                        </div>
+                    </div>
+                    <p:commandButton value="Iniciar Sesión" action="#{loginBean.login}" update="messages" class="btn btn-primary btn-block mt-4" />
+                </h:form>
+                <h:form>
+                    <div class="form-group text-center mt-3">
+                        <h:commandLink value="¿No tienes una cuenta? Regístrate aquí" action="#{loginBean.crearUsuario}" class="btn btn-link" />
+                    </div>
+                </h:form>
+                <h:form>
+                    <div class="form-group text-center mt-3">
+                        <h:commandLink value="¿Tienes cuenta en un POD? Ingresa aquí" action="#{loginBean.redirectToWebID}" class="btn btn-link" />
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>

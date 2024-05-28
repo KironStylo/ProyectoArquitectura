@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf17166137712200" configfile="/WebProyecto/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="562" id="pf17166515140490" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf17166516101599 pf171665162265911 pf171669491290621 pf17167446358170 pf17167742112585" inlinks="pf17167447002594" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="user/home.xhtml" x="338" y="178" id="pf171665161015910" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf17166516101599" path="/user/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/home.xhtml" x="338" y="1330" id="pf171665162265912" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf171667266624717 pf171667266624718" inlinks="pf171665162265911 pf171666686851315 pf171667266624719" path="/admin/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/editarProducto.xhtml" x="122" y="1138" id="pf171666686851316" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf171666686851315" inlinks="pf171667266624717" path="/admin/editarProducto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/verProducto.xhtml" x="122" y="1522" id="pf171667266624720" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf171667266624719" inlinks="pf171667266624718" path="/admin/verProducto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="user/crearUsuario.xhtml" x="552" y="562" id="pf171669491290622" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf17167447002594" inlinks="pf171669491290621 pf17167742112585" path="/user/crearUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="shop/store.xhtml" x="338" y="946" id="pf17167446358183" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf17167446358170" path="/shop/store.xhtml"/>
+  <links id="pf17166516101599" target="pf171665161015910" source="pf17166515140490" outcome="user/home" redirect="true"/>
+  <links id="pf171665162265911" target="pf171665162265912" source="pf17166515140490" outcome="admin/home" redirect="true"/>
+  <links id="pf171666686851315" target="pf171665162265912" source="pf171666686851316" outcome="guardarCambios" redirect="true"/>
+  <links id="pf171667266624717" target="pf171666686851316" source="pf171665162265912" outcome="editarProducto" redirect="true"/>
+  <links id="pf171667266624718" target="pf171667266624720" source="pf171665162265912" outcome="verProducto" redirect="true"/>
+  <links id="pf171667266624719" target="pf171665162265912" source="pf171667266624720" outcome="home" redirect="true"/>
+  <links id="pf171669491290621" target="pf171669491290622" source="pf17166515140490" outcome="crearUsuario" redirect="true"/>
+  <links id="pf17167446358170" target="pf17167446358183" source="pf17166515140490" outcome="shop/store" redirect="true"/>
+  <links id="pf17167447002594" target="pf17166515140490" source="pf171669491290622" outcome="exito" redirect="true"/>
+  <links id="pf17167742112585" target="pf171669491290622" source="pf17166515140490" outcome="crearUsuario" redirect="true"/>
+</pageflow:Pageflow>

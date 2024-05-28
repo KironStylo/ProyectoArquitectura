@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
+    <wb-module deploy-name="DatosEar">
+                
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+                
+        <dependent-module archiveName="DatosTier.jar" deploy-path="/" handle="module:/resource/DatosTier/DatosTier">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="DatosTierInterfaces.jar" deploy-path="/" handle="module:/resource/DatosTierInterfaces/DatosTierInterfaces">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="JPAPersistencia.jar" deploy-path="/lib" handle="module:/resource/JPAPersistencia/JPAPersistencia">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+        <dependent-module archiveName="Entities.jar" deploy-path="/lib" handle="module:/resource/Entities/Entities">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+            
+    </wb-module>
+    
+</project-modules>

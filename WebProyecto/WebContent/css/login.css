@@ -1,0 +1,37 @@
+/* Estilos para el contenedor del formulario de inicio de sesión */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Esto centra verticalmente el contenido */
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.login-form {
+    width: 300px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Estilos para el título del formulario */
+.login-form h2 {
+    margin-bottom: 20px; /* Espacio entre el título y el formulario */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilos para la opción del tipo de usuario */
+.login-form .p-radiobutton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Espacio entre el radio button y los campos */
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login-form .p-button {
+    width: 100%;
+    margin-top: 20px; /* Espacio arriba del botón */
+}

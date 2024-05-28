@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Editar Producto</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet" />
+</h:head>
+
+<h:body>
+	<div class="container mt-4">
+		<h1>Editar Producto</h1>
+		<h:form>
+			<div class="row">
+				<!-- Primera Columna -->
+				<div class="col-md-6">
+					<div class="mb-3">
+						<label for="nombre" class="form-label">Nombre:</label>
+						<h:inputText id="nombre" class="form-control"
+							value="#{productoBean.producto.nombre}" />
+					</div>
+					<div class="mb-3">
+						<label for="precio" class="form-label">Precio:</label>
+						<h:inputText id="precio" class="form-control"
+							value="#{productoBean.producto.precio}" />
+					</div>
+					<div class="mb-3">
+						<label for="descripcion" class="form-label">Descripción:</label>
+						<h:inputTextarea id="descripcion" class="form-control" rows="4"
+							value="#{productoBean.producto.descripcion}" />
+					</div>
+				</div>
+				<!-- Segunda Columna -->
+				<div class="col-md-6">
+					<div class="mb-3">
+						<label for="cantidad" class="form-label">Cantidad:</label>
+						<h:inputText id="cantidad" class="form-control"
+							value="#{productoBean.producto.cantidad}" />
+					</div>
+					<div class="mb-3">
+						<label for="categoria" class="form-label">Categoría:</label>
+						<h:inputText id="categoria" class="form-control"
+							value="#{productoBean.producto.categoria}" />
+					</div>
+					<div class="mb-3">
+						<label for="imagen" class="form-label">Enlace de la
+							Imagen:</label>
+						<h:inputText id="imagen" class="form-control"
+							value="#{productoBean.producto.imagenUrl}" />
+					</div>
+					<!-- Mostrar la imagen del producto -->
+					<div class="mb-3">
+						<label class="form-label">Imagen del Producto:</label> <img
+							src="#{productoBean.producto.imagenUrl}"
+							alt="Imagen del Producto" class="img-fluid"
+							style="max-width: 200px;" />
+					</div>
+				</div>
+			</div>
+			<!-- Botón centrado horizontalmente -->
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center">
+					<p:commandButton value="Guardar Cambios" type="submit"
+						class="btn btn-primary" action="#{productoBean.guardarCambios()}" />
+				</div>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>

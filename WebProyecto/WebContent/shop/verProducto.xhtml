@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Información del Producto</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet" />
+	<style>
+.product-info-card {
+	max-width: 800px;
+	margin: auto;
+	margin-top: 50px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info-card img {
+	max-width: 200px;
+	height: auto;
+	float: right;
+	margin-left: 20px;
+}
+
+.product-info-card .info {
+	margin-top: 20px;
+}
+</style>
+</h:head>
+<h:body>
+	<ui:include src="/util/nav.xhtml" />
+	<h:form>
+		<div class="container">
+			<div class="product-info-card">
+				<div class="row">
+					<div class="col-md-8">
+						<h2>#{productoBean.producto.nombre}</h2>
+						<div class="info">
+							<p>
+								<strong>Precio:</strong> #{productoBean.producto.precio}
+							</p>
+							<p>
+								<strong>Categoría:</strong> #{productoBean.producto.categoria}
+							</p>
+							<p>
+								<strong>Descripción:</strong>
+								#{productoBean.producto.descripcion}
+							</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<img src="#{productoBean.producto.imagenUrl}"
+							alt="Imagen de #{productoBean.producto.nombre}" />
+					</div>
+				</div>
+				<div class="text-center">
+					<p:button value="Regresar"
+						outcome="#{shopProductBean.regresarHome()}" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

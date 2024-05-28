@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Carrito de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+        .product-info-card {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-info-card img {
+            max-width: 200px;
+            height: auto;
+            float: right;
+            margin-left: 20px;
+        }
+        .product-info-card .info {
+            margin-top: 20px;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quantity-controls button {
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .quantity-controls .btn-increment {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .quantity-controls .btn-decrement {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .subtotal-row {
+            font-weight: bold;
+            text-align: right;
+            padding: 10px 0;
+        }
+    </style>
+</h:head>
+<h:body>
+
+    <ui:include src="/util/nav.xhtml"/>
+
+    <div class="container mt-4">
+        <h1 class="text-center">Carrito de Compras</h1>
+        <h:form id="carritoForm">
+            <p:dataTable value="#{shoppingCartBean.carrito.items}" var="item" styleClass="table table-striped">
+                <p:column headerText="Nombre">
+                    #{item.producto.nombre}
+                </p:column>
+                <p:column headerText="Precio">
+                    $#{item.producto.precio}
+                </p:column>
+                <p:column headerText="Cantidad">
+                    #{item.cantidad}
+                </p:column>
+                <p:column headerText="Total">
+                    $#{item.cantidad * item.producto.precio}
+                </p:column>
+                <p:column headerText="Acciones">
+                    <div class="quantity-controls">
+                        <p:commandButton value="-" action="#{shoppingCartBean.decrementarCantidad(item.producto)}" update="carritoForm"
+                                         styleClass="btn btn-decrement"/>
+                        <p:commandButton value="+" action="#{shoppingCartBean.incrementarCantidad(item.producto)}" update="carritoForm"
+                                         styleClass="btn btn-increment"/>
+                    </div>
+                </p:column>
+            </p:dataTable>
+            <div class="subtotal-row">
+                <h:outputText value="Subtotal: $" />
+                <h:outputText value="#{shoppingCartBean.calcularTotal()}" />
+            </div>
+        </h:form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</h:body>
+</html>
