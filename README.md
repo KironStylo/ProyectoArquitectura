@@ -1,4 +1,4 @@
-![image](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/a57b661b-4ded-4cdb-b5bb-8df54fcc89e5)# Mi Portal - Plataforma de E-Commerce
+ Mi Portal - Plataforma de E-Commerce
 
 ## Descripción del Proyecto
 
@@ -62,6 +62,8 @@ Este entorno de desarrollo se puede descargar de está página [Eclipse 2024-03]
 Una vez instalado Eclipse, se debe instalar la versión de Wildfly 31.0.1 usada en el proyecto y la versión de Apache Tomcat 10.1.23 para desplegar los proyectos por niveles.
 Para descargar Wildfly, se puede visitar el siguiente enlace [Wildfly 31.0.1](https://www.wildfly.org/downloads/)
 Para descargar Apache Tomcat, se puede visitar el siguiente enlace [Apache Tomcat 10.1.23](https://tomcat.apache.org/download-10.cgi)
+
+Además el proyecto se ejecuta con Java 17 debido a la compatibilidad con los contenedores 
 
 ## 2. **Configuración de los servidores de Wildfly de datos y lógica**
 
@@ -141,7 +143,7 @@ Además de esta configuración, también se debe especificar el puerto por donde
 Para verificar el funcionamiento de que el servidor esta conectado con la base de datos MySQL, se puede ir a linea de comandos y ejecutar el bat de standalone donde se podra apreciar si la conexión con la base de datos desde el contenedor de Wildfly fue exitosa. Se debe ir hasta al directorio donde se encuentra el bat el cuál es "bin" como se muestra en la pantalla y se abre una consola de comandos:
 ![Imagen7](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/e46ce3d8-fa96-4904-8283-9cd2a291122f)
 
-En la consola de comandos se puede evidenciar que la conexión con la base de datos fue exitosa dado que el nombre "MiPortalDS" aparece en la línea de comandos:
+En la consola de comandos se puede evidenciar que la conexión con la base de datos fue exitosa dado que el nombre "MiPortalDS" aparece en la línea de comandos:\
 ![Imagen6](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/dbbd2654-083a-4c40-8d48-339ed2b6042b)
 
 
@@ -150,7 +152,7 @@ En la consola de comandos se puede evidenciar que la conexión con la base de da
 Se debe acceder desde el directorio de archivos a la carpeta del servidor de Wildfly Lógica y entrar al fichero "standalone" y luego al "configuration" para acceder al "standalone.xml".
 ![Imagen5](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/01548ea2-7aa2-4474-ae21-815237b5b5f5)
 
-La configuración del Widlfly de lógica es más sencilla puesto que solo requiere repetir el paso anterior y cambiar el puerto del servidor a 8280 cambiando el offset a 200.
+La configuración del Widlfly de lógica es más sencilla puesto que solo requiere repetir el paso anterior y cambiar el puerto del servidor a 8280 cambiando el offset a 200 en el standalone.xml.
 ```xml
 <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:400}">
         <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
@@ -165,12 +167,43 @@ La configuración del Widlfly de lógica es más sencilla puesto que solo requie
         </outbound-socket-binding>
 </socket-binding-group>
 ```
+
 ## 3. **Configuración del entorno de desarrollo Eclipse**
+Ahora en Eclipse se deben hacer otras configuraciones para que se instancien los contenedores Wildfly y el servidor de Tomcat desde el IDE directamente.
 
+La primera configuración es agregar los Server Runtime para los tres tipos de servidores teniendo presente el estilo arquitectónico definido de niveles que se debe mantener incluso en la creación de los tiempos de ejecución de los servidores como se muestra a continuación:
 
+Se debe ir al menu de preferencias y en la barra de búsqueda escribir "Runtime" para agregar los runtime de cada uno de los servidores:
+![Imagen9](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/d73cee0e-98a6-4daa-98e7-1fbf84dcee00)
 
+Luego en el menu se deben ir agregando uno por uno los runtime de los servidores como se muestra en las siguientes tres imagenes:
 
+La primera imagen muestra la configuración del runtime del servidor de datos de Wildfly:
 
+![Imagen10](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/0450a59f-8989-4b35-834f-7987a4c2e832)
+
+La segunda imagen muestra la configuración del runtime del servidor de lógica de Wildfly:
+
+![Imagen11](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/8c39c16f-8e35-4ae9-9b1b-d83757d4096c)
+
+La tercera imagen muestra la configuración del runtime del servidor de presentación de Tomcat:
+
+![Imagen13](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/0aaf5c79-fdc2-4cbc-9aea-70b0491207a1)
+
+Ahora se deben crear los servidores cuyos runtimes seran efectivamente los creados anteriormente y serviran para desplegar los proyectos de este repositorio.
+
+Para crear un servidor, basta con ir a la vista de consola e indicar que se va a crear un nuevo servidor y las consideraciones a tener cuenta es que la versión del servidor debe ser igual a la del runtime con el fin de evitar conflictos de desarrollo. De esta forma, se asegurá un despliegue correcto y seguro de cada uno de los proyectos (Datos EAR, Logica EAR, WebProyecto).
+
+Así se debe ver la vista de los servidores:
+![Imagen16](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/bb5d5c95-835d-424b-b88b-fcbe3103f21b)
+
+## 3. **Configuración para integración con Primefaces JSF en Eclipse**
+Finalmente, fue un reto encontrar las librerias correctas para hacer funcionar la parte de la presentación Java Server Faces con Tomcat desde Eclipse y se mencionan las librerías utilizadas para usar la biblioteca de componentes de Primefaces que fueron los siguientes.
+
+-Libreria GSON.
+-Libreria Hibernate Core 6.5.2
+-Libreria Jakarta Faces 3.0.3
+-Libreria
 
 
 
