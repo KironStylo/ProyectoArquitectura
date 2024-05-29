@@ -53,10 +53,10 @@ Mi Portal se integra con dos aplicaciones .NET para ampliar su funcionalidad:
 - **Santiago Molina Aranza**
 - **Daniel Florido**
 
-## Instrucciones de Despliegue
+## Proceso de configuración en Eclipse (Despliegue)
 
 1 **Configuración del entorno de desarrollo**
-El entorno de desarrollo escogido fue Eclipse 2024-03 en su versión de plataforma independiente. 
+El entorno de desarrollo escogido fue Eclipse 2024-03 en su versión de plataforma independiente de manera local el proyecto.
 Este entorno de desarrollo se puede descargar de está página [Eclipse 2024-03](https://www.eclipse.org/downloads/packages/).
 
 Una vez instalado Eclipse, se debe instalar la versión de Wildfly 31.0.1 usada en el proyecto y la versión de Apache Tomcat 10.1.23 para desplegar los proyectos por niveles.
@@ -65,7 +65,28 @@ Para descargar Apache Tomcat, se puede visitar el siguiente enlace [Apache Tomca
 
 Es recomendable manejar dentro del directorio raíz dos carpetas para guardar donde se alojaran los servidores dentro de nuestro equipo y donde se alojara el ambiente de desarrollo de eclipse.
 La siguiente imagen es un ejemplo de como se encuentran las dos carpetas dentro de una maquina virtual:
+
 ![Imagen1](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/2c82c280-2cb7-45e0-a237-38c7a3082b0a)
+
+Asi se debe ver la carpeta al final despues de haber descargado y descomprimido los archivos dentro de un directorio de nuestra directorio raiz en el equipo que nos encontremos:
+
+![Imagen2](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/6d86d29c-ce15-494d-85ef-0509a6cc3aed)
+
+Es importante tener en cuenta que las configuraciones de los servidores Wildfly es crítica en una arquitectura por niveles, por lo que los archivos "standalone.xml" cambian de acuerdo al rol que cumple el contenedor. Primero, se va empezar explicando la configuración para la carpeta de Wildfly de datos:
+
+Primero en la ruta mostrada en la siguiente imagen, es importante tener un carpeta nombrada mysql.
+![Imagen3](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/a43c4c0d-0e09-4fc5-8a36-52c964ee135c)
+
+Segundo, se debe tener una carpeta llamada main, la cual contendra un archivo module.xml y el connector de MySQL para permitir a Wildfly tener un DataSource con el motor de base de datos MySQL.
+![Imagen4](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/ce328e9e-d7fc-43a9-9463-7f1e5065ef01)
+
+Para descargar el conector de MySQL se puede obtener de la siguiente plataforma [JConnector](https://dev.mysql.com/downloads/connector/j/).
+El module xml se tiene que ver así y lo único que se debe cambiar es la versión seleccionada del conector a la base de datos MySQL como se muestra en el siguiente fragmento.
+
+
+
+
+
 
 
 
