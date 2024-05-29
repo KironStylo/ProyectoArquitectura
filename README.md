@@ -1,4 +1,4 @@
-# Mi Portal - Plataforma de E-Commerce
+![image](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/a57b661b-4ded-4cdb-b5bb-8df54fcc89e5)# Mi Portal - Plataforma de E-Commerce
 
 ## Descripción del Proyecto
 
@@ -65,6 +65,7 @@ Para descargar Apache Tomcat, se puede visitar el siguiente enlace [Apache Tomca
 
 ## 2. **Configuración de los servidores de Wildfly de datos y lógica**
 
+**2.1 Configuración de servidores de Wildfly de datos**
 Es recomendable manejar dentro del directorio raíz dos carpetas para guardar donde se alojaran los servidores dentro de nuestro equipo y donde se alojara el ambiente de desarrollo de eclipse.
 La siguiente imagen es un ejemplo de como se encuentran las dos carpetas dentro de una maquina virtual:
 
@@ -137,7 +138,34 @@ Además de esta configuración, también se debe especificar el puerto por donde
         </outbound-socket-binding>
 </socket-binding-group>
 ```
-## 2. **Configuración del entorno de desarrollo Eclipse**
+Para verificar el funcionamiento de que el servidor esta conectado con la base de datos MySQL, se puede ir a linea de comandos y ejecutar el bat de standalone donde se podra apreciar si la conexión con la base de datos desde el contenedor de Wildfly fue exitosa. Se debe ir hasta al directorio donde se encuentra el bat el cuál es "bin" como se muestra en la pantalla y se abre una consola de comandos:
+![Imagen7](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/e46ce3d8-fa96-4904-8283-9cd2a291122f)
+
+En la consola de comandos se puede evidenciar que la conexión con la base de datos fue exitosa dado que el nombre "MiPortalDS" aparece en la línea de comandos:
+![Imagen6](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/dbbd2654-083a-4c40-8d48-339ed2b6042b)
+
+
+
+**2.2 Configuración de servidores de Wildfly de lógica**
+Se debe acceder desde el directorio de archivos a la carpeta del servidor de Wildfly Lógica y entrar al fichero "standalone" y luego al "configuration" para acceder al "standalone.xml".
+![Imagen5](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/01548ea2-7aa2-4474-ae21-815237b5b5f5)
+
+La configuración del Widlfly de lógica es más sencilla puesto que solo requiere repetir el paso anterior y cambiar el puerto del servidor a 8280 cambiando el offset a 200.
+```xml
+<socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:400}">
+        <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
+        <socket-binding name="http" port="${jboss.http.port:8080}"/>
+        <socket-binding name="https" port="${jboss.https.port:8443}"/>
+        <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>
+        <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
+        <socket-binding name="txn-recovery-environment" port="4712"/>
+        <socket-binding name="txn-status-manager" port="4713"/>
+        <outbound-socket-binding name="mail-smtp">
+            <remote-destination host="${jboss.mail.server.host:localhost}" port="${jboss.mail.server.port:25}"/>
+        </outbound-socket-binding>
+</socket-binding-group>
+```
+## 3. **Configuración del entorno de desarrollo Eclipse**
 
 
 
