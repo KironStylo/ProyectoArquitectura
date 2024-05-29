@@ -231,11 +231,16 @@ Librerias utilizadas:
 
 
 5. **Configuración del Servicio de Recomendaciones**:
-   - Clone y despliegue el servicio de [ArtificialInteligenceApi](https://github.com/Cam1101/ArtificialInteligenceApi).
-   - Asegúrese de que el servicio de recomendaciones esté en funcionamiento y correctamente integrado
+   - Este servicio esta alojado en el servicio de hosting Render usando Python y desde el proyecto se hace el llamado al servicio.
+   - En la siguiente imagen se muestra un ejemplo usando la aplicación POSTMAN para recibir una solicitud del servicio al enviar productos ejemplo que un usuaro haya comprado.
+   - ![image](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/25118da3-56e6-40f7-b789-3c9bbb46f889)
+
+
    
 ## Videos de demostración:
 En estos videos se evidencia el funcionamiento del proyecto y una breve explicación del código realizado:
-\Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://youtu.be/qs5U0i8nYJI?si=ZAccOzUAvTUIn2m4)
-\Segundo video donde se hace la ejecución y se muestra la parte implementada de PODS y el funcionamiento de las recomendaciones: [Video 2](https://youtu.be/SpSvXu7DXGE)
+
+Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://youtu.be/qs5U0i8nYJI?si=ZAccOzUAvTUIn2m4)
+
+Segundo video donde se hace la ejecución y se muestra la parte implementada de PODS y el funcionamiento de las recomendaciones: [Video 2](https://youtu.be/SpSvXu7DXGE)
 
