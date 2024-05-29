@@ -200,25 +200,28 @@ Así se debe ver la vista de los servidores:
 ## 3. **Configuración para integración con Primefaces JSF en Eclipse**
 Finalmente, fue un reto encontrar las librerias correctas para hacer funcionar la parte de la presentación Java Server Faces con Tomcat desde Eclipse y se mencionan las librerías utilizadas para usar la biblioteca de componentes de Primefaces que fueron los siguientes.
 
--Libreria GSON.
--Libreria Hibernate Core 6.5.2
--Libreria Jakarta Faces 3.0.3
--Libreria
-
-
+Librerias utilizadas:
+- Libreria GSON 2.1.1.0
+- Libreria Hibernate Core 6.5.2
+- Libreria Jakarta Faces 3.0.3
+- Libreria Jakarta Faces Api 3.0.0
+- Libreria Jakarta Servlet api 5.0.0
+- Libreria Primefaces - 14.0.0 - jakarta
+- LIbreria Primefaces - extensiones - 14.0.0 - jakarta
 
 
 1. **Despliegue del Nivel de Presentación**:
-   - Configure el contenedor Tomcat y despliegue el WAR del nivel de presentación.
-   - Asegúrese de que Tomcat esté configurado correctamente y en funcionamiento.
+   - Configure el contenedor Tomcat y despliegue el proyecto WebProyecto.
 
-2. **Despliegue del Nivel de Lógica y Datos**:
-   - Configure el contenedor Wildfly y despliegue los EAR correspondientes al nivel de lógica y datos.
-   - Verifique la conexión a la base de datos MySQL y asegúrese de que Wildfly esté en funcionamiento.
+2. **Despliegue del Nivel de Lógica**:
+   - Configure el contenedor Wildfly y despliegue el EAR de Logica EAR.
+     
+3. **Despliegue del Nivel de Lógica**:
+   - Configure el contenedor Wildfly y despliegue el EAR de Datos EAR.
 
-3. **Integración de Aplicaciones Externas**:
+4. **Integración de Aplicaciones Externas**:
    - Siga las instrucciones de los repositorios de [SendEmail](https://github.com/KironStylo/SendEmail) y [Portador](https://github.com/DanielFlorido/Portador) para desplegar y configurar las aplicaciones de envío de correos y cálculo de tarifa.
 
-4. **Configuración del Servicio de Recomendaciones**:
+5. **Configuración del Servicio de Recomendaciones**:
    - Clone y despliegue el servicio de [ArtificialInteligenceApi](https://github.com/Cam1101/ArtificialInteligenceApi).
    - Asegúrese de que el servicio de recomendaciones esté en funcionamiento y correctamente integrado
