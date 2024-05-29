@@ -207,7 +207,7 @@ Librerias utilizadas:
 - Libreria Jakarta Faces Api 3.0.0
 - Libreria Jakarta Servlet api 5.0.0
 - Libreria Primefaces - 14.0.0 - jakarta
-- LIbreria Primefaces - extensiones - 14.0.0 - jakarta
+- LIbreria Primefaces - extensions - 14.0.0 - jakarta
 
 
 1. **Despliegue del Nivel de Presentación**:
@@ -220,7 +220,10 @@ Librerias utilizadas:
    - Configure el contenedor Wildfly y despliegue el EAR de Datos EAR.
 
 4. **Integración de Aplicaciones Externas**:
-   - Siga las instrucciones de los repositorios de [SendEmail](https://github.com/KironStylo/SendEmail) y [Portador](https://github.com/DanielFlorido/Portador) para desplegar y configurar las aplicaciones de envío de correos y cálculo de tarifa.
+   - Clone los respositorios [SendEmail](https://github.com/KironStylo/SendEmail) y [Portador](https://github.com/DanielFlorido/Portador) para desplegar las aplicaciones en .NET.
+   - Es recomendado usar Visual Studio Code para correr el proyecto y entrar desde el IDE de Visual Studio Code para correr el proyecto usando el siguiente comando: **dotnet run**
+    ![image](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/68682d1c-76a8-4c9f-81bb-c8fc52a9ccbc)
+
 
 5. **Configuración del Servicio de Recomendaciones**:
    - Clone y despliegue el servicio de [ArtificialInteligenceApi](https://github.com/Cam1101/ArtificialInteligenceApi).
@@ -228,6 +231,6 @@ Librerias utilizadas:
    
 ## Videos de demostración:
 En estos videos se evidencia el funcionamiento del proyecto y una breve explicación del código realizado:
-Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://youtu.be/qs5U0i8nYJI?si=ZAccOzUAvTUIn2m4)
+Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://youtu.be/qs5U0i8nYJI?si=ZAccOzUAvTUIn2m4)\
 Segundo video donde se hace la ejecución y se muestra la parte implementada de PODS y el funcionamiento de las recomendaciones [Video 2](https://youtu.be/SpSvXu7DXGE)
 
