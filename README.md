@@ -81,9 +81,60 @@ Segundo, se debe tener una carpeta llamada main, la cual contendra un archivo mo
 ![Imagen4](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/ce328e9e-d7fc-43a9-9463-7f1e5065ef01)
 
 Para descargar el conector de MySQL se puede obtener de la siguiente plataforma [JConnector](https://dev.mysql.com/downloads/connector/j/).
-El module xml se tiene que ver así y lo único que se debe cambiar es la versión seleccionada del conector a la base de datos MySQL como se muestra en el siguiente fragmento.
 
+El module xml se tiene que ver así y lo único que se debe cambiar es la versión seleccionada del conector a la base de datos MySQL como se muestra en el siguiente fragmento:
 
+```xml
+<module xmlns="urn:jboss:module:1.5" name="com.mysql">
+    <resources>
+        <resource-root path="mysql-connector-j-8.3.0.jar" />
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+    </dependencies>
+</module>
+```
+
+Tercero, para configurar el standalone.xml, se debe indicar el nombre de la conexión a la base de datos, y también se debe crear desde el WorkBench de MySQL una base de datos con un usuario con permisos para manejar aquella base de datos, se recomienda usar la siguiente configuración en la que solamente se debe cambiar el nombre de la base de datos, el nombre de usuario y contraseña que tiene permisos sobre la base de datos.
+```xml
+<datasource jndi-name="java:/MiPortalDS" pool-name="MiPortalDS" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
+    <connection-url>jdbc:mysql://localhost:3306/miportal</connection-url>
+    <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
+    <driver>mysql</driver>
+    <security user-name="miportal" password="miportal"/>
+    <validation>
+        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker"/>
+        <validate-on-match>true</validate-on-match>
+        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"/>
+    </validation>
+</datasource>
+<drivers>
+    <driver name="h2" module="com.h2database.h2">
+        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+    </driver>
+    <driver name="mysql" module="com.mysql">
+        <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
+        <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
+    </driver>
+</drivers>
+```
+Además de esta configuración, también se debe especificar el puerto por donde el servidor de datos de Wildfly recibira las peticiones del servidor de lógica. En el siguiente fragmento de xml se muestra que se debe cambiar el off-set del puerto a 400 para que el puerto escuche desde el puerto con número 8480 como se muestra a continuación:
+
+```xml
+<socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:400}">
+        <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
+        <socket-binding name="http" port="${jboss.http.port:8080}"/>
+        <socket-binding name="https" port="${jboss.https.port:8443}"/>
+        <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>
+        <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
+        <socket-binding name="txn-recovery-environment" port="4712"/>
+        <socket-binding name="txn-status-manager" port="4713"/>
+        <outbound-socket-binding name="mail-smtp">
+            <remote-destination host="${jboss.mail.server.host:localhost}" port="${jboss.mail.server.port:25}"/>
+        </outbound-socket-binding>
+</socket-binding-group>
+```
 
 
 
