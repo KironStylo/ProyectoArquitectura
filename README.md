@@ -55,13 +55,15 @@ Mi Portal se integra con dos aplicaciones .NET para ampliar su funcionalidad:
 
 ## Proceso de configuración en Eclipse (Despliegue)
 
-1 **Configuración del entorno de desarrollo**
+## 1. **Obtener las tecnologías**
 El entorno de desarrollo escogido fue Eclipse 2024-03 en su versión de plataforma independiente de manera local el proyecto.
 Este entorno de desarrollo se puede descargar de está página [Eclipse 2024-03](https://www.eclipse.org/downloads/packages/).
 
 Una vez instalado Eclipse, se debe instalar la versión de Wildfly 31.0.1 usada en el proyecto y la versión de Apache Tomcat 10.1.23 para desplegar los proyectos por niveles.
 Para descargar Wildfly, se puede visitar el siguiente enlace [Wildfly 31.0.1](https://www.wildfly.org/downloads/)
 Para descargar Apache Tomcat, se puede visitar el siguiente enlace [Apache Tomcat 10.1.23](https://tomcat.apache.org/download-10.cgi)
+
+## 2. **Configuración de los servidores de Wildfly de datos y lógica**
 
 Es recomendable manejar dentro del directorio raíz dos carpetas para guardar donde se alojaran los servidores dentro de nuestro equipo y donde se alojara el ambiente de desarrollo de eclipse.
 La siguiente imagen es un ejemplo de como se encuentran las dos carpetas dentro de una maquina virtual:
@@ -135,6 +137,8 @@ Además de esta configuración, también se debe especificar el puerto por donde
         </outbound-socket-binding>
 </socket-binding-group>
 ```
+## 2. **Configuración del entorno de desarrollo Eclipse**
+
 
 
 
