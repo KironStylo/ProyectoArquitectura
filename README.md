@@ -63,7 +63,12 @@ Una vez instalado Eclipse, se debe instalar la versión de Wildfly 31.0.1 usada 
 Para descargar Wildfly, se puede visitar el siguiente enlace [Wildfly 31.0.1](https://www.wildfly.org/downloads/)
 Para descargar Apache Tomcat, se puede visitar el siguiente enlace [Apache Tomcat 10.1.23](https://tomcat.apache.org/download-10.cgi)
 
-Además el proyecto se ejecuta con Java 17 debido a la compatibilidad con los contenedores 
+Además el proyecto se ejecuta con Java 17 debido a la compatibilidad con los contenedores.
+La versión de Java se puede descargar si se visita la página oficial de Oracle [Descargar JDK 17](https://www.oracle.com/java/technologies/downloads/#java17).
+
+Los proyectos desarrollados en .NET se hicieron con el IDE de desarrollo Visual Studio Code el cuál se puede obtener en la página oficial de VSC[Descargar Visual Studio Code](https://code.visualstudio.com/download)
+
+Es importante descargar el framework oficial de .NET para poder correr los proyectos desarrollados en .NET por lo que también es necesario descargarlo de la página oficial.[Descargar .NET](https://dotnet.microsoft.com/en-us/download)
 
 ## 2. **Configuración de los servidores de Wildfly de datos y lógica**
 
@@ -231,6 +236,6 @@ Librerias utilizadas:
    
 ## Videos de demostración:
 En estos videos se evidencia el funcionamiento del proyecto y una breve explicación del código realizado:
-Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://youtu.be/qs5U0i8nYJI?si=ZAccOzUAvTUIn2m4)\
-Segundo video donde se hace la ejecución y se muestra la parte implementada de PODS y el funcionamiento de las recomendaciones [Video 2](https://youtu.be/SpSvXu7DXGE)
+\Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://youtu.be/qs5U0i8nYJI?si=ZAccOzUAvTUIn2m4)
+\Segundo video donde se hace la ejecución y se muestra la parte implementada de PODS y el funcionamiento de las recomendaciones: [Video 2](https://youtu.be/SpSvXu7DXGE)
 
