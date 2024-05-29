@@ -55,6 +55,16 @@ Mi Portal se integra con dos aplicaciones .NET para ampliar su funcionalidad:
 
 ## Instrucciones de Despliegue
 
+1 **Configuración del entorno de desarrollo**
+El entorno de desarrollo escogido fue Eclipse 2024-03 en su versión de plataforma independiente. 
+Este entorno de desarrollo se puede descargar de está página [Eclipse 2024-03](https://www.eclipse.org/downloads/packages/).
+
+Una vez instalado Eclipse, se debe instalar la versión de Wildfly 31.0.1 más estable a fecha de subida del repositorio y la versión de Apache Tomcat 10.1.23 para desplegar los proyectos por niveles.
+Wi
+
+
+
+
 1. **Despliegue del Nivel de Presentación**:
    - Configure el contenedor Tomcat y despliegue el WAR del nivel de presentación.
    - Asegúrese de que Tomcat esté configurado correctamente y en funcionamiento.
