@@ -233,7 +233,7 @@ Librerias utilizadas:
 5. **Configuración del Servicio de Recomendaciones**:
    - Este servicio esta alojado en el servicio de hosting Render usando Python y desde el proyecto se hace el llamado al servicio.
    - En la siguiente imagen se muestra un ejemplo usando la aplicación POSTMAN para recibir una solicitud del servicio al enviar productos ejemplo que un usuaro haya comprado.
-   - ![image](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/25118da3-56e6-40f7-b789-3c9bbb46f889)
+   ![image](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/9de09ab6-9e26-43d1-9cf2-6cb5a96beb3f)
 
 
    
