@@ -228,6 +228,6 @@ Librerias utilizadas:
    
 ## Videos de demostración:
 En estos videos se evidencia el funcionamiento del proyecto y una breve explicación del código realizado:
-Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://www.youtube.com/watch?v=pmWFzzU_NB4)
+Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://youtu.be/qs5U0i8nYJI?si=ZAccOzUAvTUIn2m4)
 Segundo video donde se hace la ejecución y se muestra la parte implementada de PODS y el funcionamiento de las recomendaciones [Video 2](https://youtu.be/SpSvXu7DXGE)
 
