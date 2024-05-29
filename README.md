@@ -59,8 +59,14 @@ Mi Portal se integra con dos aplicaciones .NET para ampliar su funcionalidad:
 El entorno de desarrollo escogido fue Eclipse 2024-03 en su versión de plataforma independiente. 
 Este entorno de desarrollo se puede descargar de está página [Eclipse 2024-03](https://www.eclipse.org/downloads/packages/).
 
-Una vez instalado Eclipse, se debe instalar la versión de Wildfly 31.0.1 más estable a fecha de subida del repositorio y la versión de Apache Tomcat 10.1.23 para desplegar los proyectos por niveles.
-Wi
+Una vez instalado Eclipse, se debe instalar la versión de Wildfly 31.0.1 usada en el proyecto y la versión de Apache Tomcat 10.1.23 para desplegar los proyectos por niveles.
+Para descargar Wildfly, se puede visitar el siguiente enlace [Wildfly 31.0.1](https://www.wildfly.org/downloads/)
+Para descargar Apache Tomcat, se puede visitar el siguiente enlace [Apache Tomcat 10.1.23](https://tomcat.apache.org/download-10.cgi)
+
+Es recomendable manejar dentro del directorio raíz dos carpetas para guardar donde se alojaran los servidores dentro de nuestro equipo y donde se alojara el ambiente de desarrollo de eclipse.
+La siguiente imagen es un ejemplo de como se encuentran las dos carpetas dentro de una maquina virtual:
+![Imagen1](https://github.com/KironStylo/ProyectoArquitectura/assets/105558468/2c82c280-2cb7-45e0-a237-38c7a3082b0a)
+
 
 
 
