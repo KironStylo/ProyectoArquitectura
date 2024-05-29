@@ -225,3 +225,9 @@ Librerias utilizadas:
 5. **Configuración del Servicio de Recomendaciones**:
    - Clone y despliegue el servicio de [ArtificialInteligenceApi](https://github.com/Cam1101/ArtificialInteligenceApi).
    - Asegúrese de que el servicio de recomendaciones esté en funcionamiento y correctamente integrado
+   
+## Videos de demostración:
+En estos videos se evidencia el funcionamiento del proyecto y una breve explicación del código realizado:
+Primer video donde se hace la ejecución del proyecto y la explicación del modelo: [Video 1](https://www.youtube.com/watch?v=pmWFzzU_NB4)
+Segundo video donde se hace la ejecución y se muestra la parte implementada de PODS y el funcionamiento de las recomendaciones [Video 2](https://youtu.be/SpSvXu7DXGE)
+
