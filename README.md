@@ -43,15 +43,15 @@ Mi Portal se integra con dos aplicaciones .NET para ampliar su funcionalidad:
 ## Manejo Sencillo de Pods
 
 - Repositorio: [pods](https://github.com/DanielFlorido/pods)
-- Descripción: Un repositorio que facilita la integración y gestión de pods, permitiendo una edición sencilla de un pod específico dentro del sistema.
+- Descripción: Un repositorio de prueba que realizamos para acceder a un pod creado con el proveedor Inrupt para hacer operaciones sencillas de modificar, agregar, eliminar y ver una dirección de un usuario dado su WebID.
 
 ## Integrantes del Proyecto
 
-- **Integrante 1**
-- **Integrante 2**
-- **Integrante 3**
-- **Integrante 4**
-- **Integrante 5**
+- **Juan Camilo Parrado**
+- **Santiago Rey Benavides Camilo**
+- **Santiago Gallo Jaimes**
+- **Santiago Molina Aranza**
+- **Daniel Florido**
 
 ## Instrucciones de Despliegue
 
